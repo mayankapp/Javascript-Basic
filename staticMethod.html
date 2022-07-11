@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Static Method</title>
+</head>
+<body>
+
+    <script>
+
+        // Static Methods Calls without the Objects means it will called through classname
+
+        class Addition{
+            static sum(){
+                let a = 10;
+                let b = 20;
+                console.log(`The Sum of two Numbers is : ${a+b}`);
+            }
+        }
+        
+        Addition.sum();             // It gives the Output of the Function
+        
+        const add = new Addition();
+        add.sum();                  // It gives the Error
+
+        /* Note : If we use static Keyword then that function is called as Static Method 
+        Otherwise it is known as instance Method */
+
+    </script>
+    
+</body>
+</html>

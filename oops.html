@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript OOPS</title>
+</head>
+<body>
+
+    <script>
+
+        class Students{
+            constructor(name,age,degree){
+                this.myName = name;
+                this.myAge = age;
+                this.myDegree = degree;
+            }
+            biodata() {
+                return `My Name is ${this.myName} , Age is ${this.myAge} and the Degree is ${this.myDegree}`;
+            }
+        }
+
+        class Player extends Students{
+            constructor(name,age,degree,game){
+                super(name,age,degree);
+                this.myGame = game;
+            }
+            playerbioData() {
+                return `${super.biodata()} and I Love to play the ${this.myGame} .`;
+            }
+        }
+
+        const obj1 = new Player("Mayank Tiwari",25,"MCA","Cricket");
+        console.log(obj1.playerbioData());
+        
+    </script>
+    
+</body>
+</html>

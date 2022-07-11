@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript this Keyboard</title>
+</head>
+<body>
+    
+    <script>
+        
+        "use strict";
+
+        // Alone , this refers to the global object
+
+         console.log(this);      // returns the Global Object that is Window
+
+        // In Regular Function , this refers to the global object
+
+        function sum(a,b){
+            console.log("The Sum of two Numbers is : " + (a+b)); 
+
+            console.log(this);  // It also returns the Global Object that is Window
+
+            // In strict Mode this is returns as undefined Otherwise it returns the Global Object
+           
+            console.log(this);  
+        }
+
+        sum(4,5);
+
+        // In Method , this refers to the Owner object 
+
+        const data = {
+            name : "Mayank Tiwari",
+            qualification : "MCA",
+            sum : function(){
+                let add = 2+5;
+                console.log("The Sum of the Number is : " + add); 
+                console.log(this);      // It refers to the data object that is Owner Object
+            }
+        }
+
+        data.sum();
+
+    </script>
+
+    <script>
+        
+        // In Regular Function , this refers to the Global Object if the function inside the Object
+
+        const obj = {
+            name : "Mayank Tiwari",
+            qualification : "MCA",
+            sum : function(){ 
+                console.log(this);      // It refers to the data object that is Owner Object
+            
+                function child(){
+                    console.log(this);  // It refers to the Global object because the Rule of Regular Function
+                }
+
+                child();
+
+            }
+        }
+
+        obj.sum();
+
+    </script>
+
+</body>
+</html>

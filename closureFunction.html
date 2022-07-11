@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure Function</title>
+</head>
+<body>
+
+    <script>
+        
+        // Closure Function
+
+        /* In the Closure Function we can access the outer Function's 
+        Variable & parameters inside the Inner Function */
+
+        const outFun = (a)=>{
+            let b = 10;
+            const innFun = ()=>{
+                let sum = a + b;
+                console.log(`The Sum of Two Numbers is : ${sum}`);
+            }
+            innFun();
+        }
+        
+        outFun(4);
+
+    </script>
+    <script>
+
+        // Closure Function Exercise
+
+        const interviewQues = (name)=>{
+            return function(topic){
+                if (name === "Mayank") {
+                    console.log(`Hello ${name} ! Kindly Tell me the What is ${topic} ?`);
+                }else if (name === "Anurag") {
+                    console.log(`Hello ${name} ! Kindly Tell me the What is ${topic} ?`);
+                }else if (name === "Nayan") {
+                    console.log(`Hello ${name} ! Kindly Tell me the What is ${topic} ?`);
+                }else if (name === "Ankit") {
+                    console.log(`Hello ${name} ! Kindly Tell me the What is ${topic} ?`);
+                }else{
+                    console.log(`Hello ${name} ! Welcome to Appscrip Surat Gujarat`);
+                }
+            }
+        }
+
+        // First way of Calling Closure Functions
+
+        const candidate1 = interviewQues("Mayank");
+        candidate1("Node-js");
+        const candidate2 = interviewQues("Anurag");
+        candidate2("HTML");
+        const candidate3 = interviewQues("Nayan");
+        candidate3("React-js");
+        const candidate4 = interviewQues("Ankit");
+        candidate4("MongoDB");
+        const candidate5 = interviewQues("Tiwari");
+        candidate5("PHP");
+
+        // Second way of Calling Closure Functions
+
+        interviewQues("Mayank")("Node-js");
+        interviewQues("Anurag")("HTML");
+        interviewQues("Nayan")("React-js");
+        interviewQues("Ankit")("MongoDB");
+        interviewQues("Tiwari")("PHP");
+
+    </script>
+    
+</body>
+</html>

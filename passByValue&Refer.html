@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass by Value & Reference</title>
+</head>
+<body>
+    
+    <script>
+
+        // Pass by Value 
+
+        let a = 3;
+        let b = a;
+         
+        b += 4;                 // Only The Value of b is Updated
+
+        console.log(a);
+        console.log(b);
+
+        /* Note :- In the Pass by Value only the Primitive Value is updated */
+
+        
+        // Pass by Reference
+            
+            // Object type Reference 
+            
+            const obj1 = { 
+                name : "Mayank Tiwari",
+                phone : 9758266026
+            }
+
+            const obj2 = obj1;
+
+            obj2.name = "Mayank";  // The Value of both Objects is Updated (obj1 as well as obj2)
+
+            console.log(obj1);
+            console.log(obj2);
+            
+            /* Note : In the Pass by Reference both Object's Value is updated */
+
+            // Array type Reference 
+            
+            const arr1 = [1,2,3,4];
+
+            const arr2 = arr1;
+
+            arr2.push(5);       // The Value of both Arrays is Updated (arr1 as well as arr2)
+
+            console.log(arr1);
+            console.log(arr2);
+
+        /* Note : In the Pass by Reference both Array's Value is updated */
+
+    </script>
+    <script>
+
+        // Exercise
+
+        let likes = 100;
+
+        const youtube = {
+            name : "ThapaTechnical",
+            subscribers : 98000,
+        }
+
+        const thapa =  (a,b) => {
+            a = 200;
+            b.subscribers = 100000;
+        }
+
+        thapa(likes,youtube);
+
+        console.log(likes);                 // Output is 100
+        console.log(youtube.subscribers);   // Output is 100000
+
+    </script>
+
+</body>
+</html>

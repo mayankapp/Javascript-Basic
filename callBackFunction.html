@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function as Arguments</title>
+</head>
+<body>
+
+    <script>
+
+        // Callback Function
+
+        const myName = ()=>{
+            return "Hello";
+        }
+
+        const greeting = (sayHi,name)=>{
+            console.log(`${sayHi} ${name}`);
+        }
+
+        greeting(myName(),"Mayank Tiwari");
+
+        /* Note : Here myName function is known as Callback Function */
+
+        // Returning Function
+
+        function sum(){
+            return function child(){
+                console.log("Hello My Name is Mayank Tiwari");
+            }
+        }
+
+        sum()();                    // First way of calling Returning Function
+
+        const a = sum();
+        a();                        // Second way of calling Returning Function
+
+    </script>
+    <script>
+
+        // Callback Function
+
+        const perOne = (friend, callBack)=>{
+            console.log(`I am Busy Right now. I am Taking to ${friend}. I will Call Back to you!!.`);
+            callBack();
+        }
+
+        const perTwo = ()=>{
+            console.log(`Hey! What's up. I called you na ? `);
+        }
+
+        perOne("Mayank", perTwo);
+
+    </script>
+    
+</body>
+</html>

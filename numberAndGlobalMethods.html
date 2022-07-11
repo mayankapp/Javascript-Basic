@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+</head>
+<body>
+    
+    <script>
+
+        // isFinite() / Number.isFinite() Method to Check
+        
+        let num1 = 5;               // Output true
+        let num2 = -23422;          // Output true
+        let num3 = NaN;             // Output false
+        let num4 = "Appscrip";      // Output false
+        let num5 = Infinity;        // Output false
+
+
+        console.log(isFinite(num5));           // Global Method Way to Check
+        console.log(Number.isFinite(num5));    // Number Method Way to Check
+
+        // isFinite() / Number.isNaN() Method to Check
+
+        let a1 = 5;               // Output false
+        let a2 = -23422;          // Output false
+        let a3 = NaN;             // Output true
+        let a4 = "Appscrip";      // Output false
+        let a5 = Infinity;        // Output false
+
+        console.log(isNaN(a5));                 // Global Method Way to Check
+        console.log(Number.isNaN(a5));          // Number Method Way to Check
+
+        // Number.isInteger() Method to Check
+
+        let b1 = 5;               // Output true
+        let b2 = -23422;          // Output true
+        let b3 = NaN;             // Output false
+        let b4 = "Appscrip";      // Output false
+        let b5 = Infinity;        // Output false
+        let b6 = 2.564545;        // Output false
+
+        console.log(Number.isInteger(b6));      // It is a Number Method not a Global
+
+    </script>
+
+</body>
+</html>

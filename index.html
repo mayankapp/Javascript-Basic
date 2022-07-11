@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+</head>
+<body>
+
+    <script>
+        
+        // Program of Swap Two Number's value with using Third Variable
+        
+        let a = 10;
+        let b = 30;
+        let tem = a;
+        
+        a = b;
+        b = tem;
+
+        console.log(`The value of a is : ${a} and the b is : ${b}`);  
+
+    </script>
+    <script>
+
+        // Program of Swap Two Number's value without using Third Variable
+
+        let c = 5;
+        let d = 25;
+
+        [c,d] = [d,c];      // This Process Also Known as Array Destructuring
+
+        console.log(`The value of c is : ${c} and the d is : ${d}`);  
+
+    </script>
+    
+</body>
+</html>
