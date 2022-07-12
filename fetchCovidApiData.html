@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Covid API Data in JavaScript</title>
+</head>
+<body>
+
+    <p id="data"></p>
+
+    <script>
+
+        // Fetch the Covid API data through API in JavaScript
+
+        fetch('https://api.covid19api.com/summary').then((apiData)=>{
+            return apiData.json();
+        }).then((actualData)=>{
+            const query = actualData.Countries[77];
+            document.getElementById('data').innerHTML = `${query.Country} has Total Confirmed Cases is ${query.TotalConfirmed} and Recovered Case is ${query.TotalRecovered}.`;
+        }).catch((err)=>{
+            console.log(err);
+        }); 
+
+    </script>
+    
+</body>
+</html>

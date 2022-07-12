@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Prototype</title>
+</head>
+<body>
+
+    <script>
+
+        class Mobile{ 
+            constructor(mobileName){
+                // This Property known as Instance Member
+                this.mobile = mobileName;
+                this.price = 10000;
+            }
+        }
+        let obj1 = new Mobile("Samsung");
+        let obj2 = new Mobile("Oneplus");
+        Mobile.prototype.color = "White";      // This Property known as Prototype Member
+        console.log(obj1);
+
+    </script>
+    
+</body>
+</html>
