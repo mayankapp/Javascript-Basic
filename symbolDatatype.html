@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol Datatype</title>
+</head>
+<body>
+
+    <script>
+
+        // Symbol Datatype use for Unique Values
+
+        let a = Symbol("Hello");               // Syntax of Symbol datatype
+
+        let b = Symbol("Hello");        // Add description in the Symbol datatype
+        
+        console.log(a);                 // Output is Symbol()
+        console.log(typeof a);          // Output is symbol
+        console.log(a === b);           // Output - False { Because both are unique values } 
+        console.log(b.description);     // Output is Hello
+        // alert(b);                       // Gives an Error : { Because symbol value is not converted into string }
+        // alert(b.toString());            // Output is Symbol(Hello)
+        // alert(b.description);           // Only we will get description of the Symbol Datatype
+        // document.write(b);             // Gives an Error : { Because we can not print symbol datatype values directly }
+
+
+        // Use of Symbol Datatype inside the Object
+
+        let employees = Symbol();
+
+        let user ={
+            name: "Appscrip",
+            address: "Surat",
+            [employees]: 50
+        }
+
+        console.log(user);
+
+        // Use of Symbol Datatype inside the Object
+
+        let age = Symbol('age');
+
+        let data ={
+            name: "Mayank Tiwari",
+            address: "Etawah UP",
+        }
+        data[age] = 26;
+
+        console.log(data.name);     // Output is Mayank Tiwari It's Fine.
+        console.log(data.age);      // Output is undefined { Because we cannot access the symbol datatype values directly }. 
+        console.log(data[age]);     // Output is 26.
+
+
+        // Use of Symbol Datatype inside the Loop
+
+        let age1 = Symbol('age');
+
+        let data1 ={
+            name: "Mayank Tiwari",
+            address: "Etawah UP",
+        }
+        data1[age1] = 26;
+        data1["gender"] = "Male";
+
+        for(let key in data1) {
+            console.log(`---------- ${key}-------------`);      // Output is name,address,gender : { Because we cannot access the object keys&values inside the Loop }.
+        }
+
+        // Convert the Object into JSON format without the symbol datatype values
+
+        let age2 = Symbol('age');
+
+        let data2 ={
+            name: "Mayank Tiwari",
+            address: "Etawah UP",
+        }
+        data2[age2] = 26;
+        data2["gender"] = "Male";
+
+        console.log(JSON.stringify(data2));     // We cannot access the Symbol datatype value inside the JSON Object
+
+        /* Note : If we want to access the Symbol Datatype value inside the JSON Object
+        then we have to convert the Symbol datatype value into string format. */
+    
+        // convert the Object into JSON format with symbol datatype values
+
+        let age3 = Symbol('age');
+
+        let data3 ={
+            name: "Mayank Tiwari",
+            address: "Etawah UP",
+        }
+        data3[age3.description] = 26;
+        data3["gender"] = "Male";
+
+        console.log(JSON.stringify(data3));
+    
+    </script>
+    
+</body>
+</html>
